@@ -18,14 +18,22 @@ public class FirstLetters {
      * Given a string of words separated by single spaces, returns a new string
      * made of the first character of each word, in order. You may assume the
      * input contains at least one word.
-     *
+     * <p>
      * Example: {@code firstLetters("Good Morning")} returns {@code "GM"}.
      *
      * @param words a non-empty string of words separated by single spaces
      * @return the first character of each word, concatenated
      */
     public static String firstLetters(String words) {
-        // TODO: complete
-        return "";
+        StringBuilder result = new StringBuilder();
+
+        result.append(words.charAt(0));
+
+        for (int i = 1; i < words.length(); i++) {
+            if (words.charAt(i) == ' ') {
+                result.append(words.charAt(i + 1));
+            }
+        }
+        return result.toString();
     }
 }
